@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div>
+  <div class="my-button">
       <button>我是一个button</button>
   </div>
 </template>
@@ -21,5 +21,10 @@ export default {
 }
 
 </script>
-<style scoped>
+<style lang="less">
+.my-button{
+    button{
+        color:red;
+    }
+}
 </style>
