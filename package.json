@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/duyanpeng/lunzi-button-test/issues"
   },
-  "homepage": "https://github.com/duyanpeng/lunzi-button-test#readme"
+  "homepage": "https://github.com/duyanpeng/lunzi-button-test#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "less": "^3.0.4"
+  }
 }
