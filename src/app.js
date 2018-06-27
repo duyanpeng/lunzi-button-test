@@ -6,6 +6,6 @@ Vue.component('GIcon',Icon)
 new Vue({
     el:'#app',
     mounted(){
-        console.log(1111)
+
     }
 })

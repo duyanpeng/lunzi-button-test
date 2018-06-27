@@ -10304,7 +10304,7 @@ exports.reload = tryWrap(function (id, options) {
 })
 
 },{}],6:[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10316,8 +10316,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
+  props: ['iconType', 'loading', ''],
   data: function data() {
     return {};
   },
@@ -10343,18 +10350,32 @@ exports.default = {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "button",
+      { staticClass: "g-button" },
+      [
+        _vm.iconType && !_vm.loading
+          ? _c("g-icon", {
+              staticClass: "g-button-icon",
+              attrs: { type: _vm.iconType }
+            })
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.loading
+          ? _c("g-icon", {
+              staticClass: "g-button-loading",
+              attrs: { type: "loading" }
+            })
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "g-button-content" }, [_vm._t("default")], 2)
+      ],
+      1
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "my-button" }, [
-      _c("button", [_vm._v("我是一个button")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -10489,11 +10510,9 @@ _vue2.default.component('GButton', _button2.default);
 _vue2.default.component('GIcon', _icon2.default);
 new _vue2.default({
     el: '#app',
-    mounted: function mounted() {
-        console.log(1111);
-    }
+    mounted: function mounted() {}
 });
-},{"vue":8,"./button.vue":6,"./icon.vue":23}],25:[function(require,module,exports) {
+},{"vue":8,"./button.vue":6,"./icon.vue":23}],34:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -10663,5 +10682,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[25,4], null)
+},{}]},{},[34,4], null)
 //# sourceMappingURL=/app.4d46c0f9.map
