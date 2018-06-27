@@ -1,9 +1,9 @@
 <!--  -->
 <template>
   <div >
-      <button class="g-button">
-          <g-icon class="g-button-icon" v-if="iconType && !loading" :type="iconType"></g-icon>
-          <g-icon class="g-button-loading" v-if="loading" type="loading" ></g-icon>
+      <button class="g-button" @click="click">
+          <g-icon :class="`g-button-icon-${iconPosition}`" v-if="iconType && !loading" :type="iconType"></g-icon>
+          <g-icon class="g-button-loading" :class="`g-button-icon-${iconPosition}`" v-if="loading" type="loading" ></g-icon>
           <div class="g-button-content">
           <slot class="g-button-slot"></slot>
           </div>
@@ -13,7 +13,15 @@
 
 <script>
 export default {
-  props:['iconType','loading',''],  
+  props:{
+      iconType:{},
+      loading:{
+          default:false
+      },
+      iconPosition:{
+          default:'left'
+      }
+  },
   data () {
     return {
     };
@@ -24,7 +32,12 @@ export default {
 
   mounted() {},
 
-  methods: {}
+  methods: {
+      click(){
+          console.log(1)
+          this.$emit('click')
+      }
+  }
 }
 
 </script>
@@ -48,8 +61,13 @@ export default {
         // color:#096dd9;
     }
 }
-.g-button-icon{
+.g-button-icon-left{
     order:1;
+    margin-right:.5rem;
+}
+.g-button-icon-right{
+    margin-left:.5rem;
+    order:3;
 }
 .g-button-content{
     order:2;

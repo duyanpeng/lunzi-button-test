@@ -15,8 +15,13 @@
 .g-button:active {
   border-color: #096dd9;
 }
-.g-button-icon {
+.g-button-icon-left {
   order: 1;
+  margin-right: .5rem;
+}
+.g-button-icon-right {
+  margin-left: .5rem;
+  order: 3;
 }
 .g-button-content {
   order: 2;
