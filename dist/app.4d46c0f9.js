@@ -10977,7 +10977,7 @@ module.exports = function test(obj, args) {
       expr = args[0];
   return negate ? !expr : expr;
 };
-},{"./flag":53}],69:[function(require,module,exports) {
+},{"./flag":53}],72:[function(require,module,exports) {
 var define;
 var global = arguments[3];
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -11410,7 +11410,7 @@ module.exports = function expectTypes(obj, types) {
     throw new AssertionError(flagMsg + 'object tested must be ' + str + ', but ' + objType + ' given', undefined, ssfi);
   }
 };
-},{"assertion-error":36,"./flag":53,"type-detect":69}],50:[function(require,module,exports) {
+},{"assertion-error":36,"./flag":53,"type-detect":72}],50:[function(require,module,exports) {
 /*!
  * Chai - getActual utility
  * Copyright(c) 2012-2014 Jake Luer <jake@alogicalparadox.com>
@@ -12147,7 +12147,7 @@ module.exports = function transferFlags(assertion, object, includeAll) {
     }
   }
 };
-},{}],72:[function(require,module,exports) {
+},{}],69:[function(require,module,exports) {
 'use strict';
 /* globals Symbol: false, Uint8Array: false, WeakMap: false */
 /*!
@@ -12598,7 +12598,7 @@ function objectEqual(leftHandOperand, rightHandOperand, options) {
 function isPrimitive(value) {
   return value === null || (typeof value === 'undefined' ? 'undefined' : _typeof(value)) !== 'object';
 }
-},{"type-detect":69}],66:[function(require,module,exports) {
+},{"type-detect":72}],66:[function(require,module,exports) {
 var config = require('../config');
 
 /*!
@@ -13804,7 +13804,7 @@ exports.isProxyEnabled = require('./isProxyEnabled');
  */
 
 exports.isNaN = require('./isNaN');
-},{"pathval":68,"./test":47,"type-detect":69,"./expectTypes":48,"./getMessage":49,"./getActual":50,"./inspect":51,"./objDisplay":52,"./flag":53,"./transferFlags":54,"deep-eql":72,"get-func-name":70,"./addProperty":55,"./addMethod":56,"./overwriteProperty":57,"./overwriteMethod":58,"./addChainableMethod":59,"./overwriteChainableMethod":60,"./compareByInspect":61,"./getOwnEnumerablePropertySymbols":62,"./getOwnEnumerableProperties":63,"check-error":71,"./proxify":64,"./addLengthGuard":65,"./isProxyEnabled":66,"./isNaN":67}],26:[function(require,module,exports) {
+},{"pathval":68,"./test":47,"type-detect":72,"./expectTypes":48,"./getMessage":49,"./getActual":50,"./inspect":51,"./objDisplay":52,"./flag":53,"./transferFlags":54,"deep-eql":69,"get-func-name":70,"./addProperty":55,"./addMethod":56,"./overwriteProperty":57,"./overwriteMethod":58,"./addChainableMethod":59,"./overwriteChainableMethod":60,"./compareByInspect":61,"./getOwnEnumerablePropertySymbols":62,"./getOwnEnumerableProperties":63,"check-error":71,"./proxify":64,"./addLengthGuard":65,"./isProxyEnabled":66,"./isNaN":67}],26:[function(require,module,exports) {
 /*!
  * chai
  * http://chaijs.com
@@ -21481,70 +21481,69 @@ new _vue2.default({
     el: '#app'
 });
 var expect = _chai2.default.expect;
-{
-    var VButton = _vue2.default.extend(_button2.default);
-    var vm = new VButton({
-        propsData: {
-            iconType: 'setting'
-        }
-    });
-    var ele = vm.$mount().$el.querySelector('use');
-    var href = ele.getAttribute('xlink:href');
-    expect(href).to.eq('#icon-setting');
-    vm.$mount().$el.remove();
-    vm.$destroy();
-}
+// {
+//     let VButton = Vue.extend(Button)
+//     let vm = new VButton({
+//         propsData: {
+//             iconType: 'setting'
+//         }
+//     })
+//     let ele = vm.$mount().$el.querySelector('use')
+//     let href = ele.getAttribute('xlink:href')
+//     expect(href).to.eq('#icon-setting')
+//     vm.$mount().$el.remove();
+//     vm.$destroy()
+// }
+// {
+//     const Constructor = Vue.extend(Button)
+//     const vm = new Constructor({
+//         propsData: {
+//             iconType: 'setting',
+//             loading: true
+//         }
+//     })
+//     vm.$mount()
+//     let useElement = vm.$el.querySelector('use')
+//     let href = useElement.getAttribute('xlink:href')
+//     expect(href).to.eq('#icon-loading')
+//     vm.$el.remove()
+//     vm.$destroy()
+// }
+// {
+//     const div = document.createElement('div');
+//     document.body.appendChild(div)
+//     const VButton = Vue.extend(Button)
+//     let vm = new VButton({
+//         propsData: {
+//             iconType: 'setting',
+//             iconPosition: 'right',
+//         }
+//     })
+//     vm.$mount(div)
+//     let svg = vm.$el.querySelector('svg')
+//     let { order } = window.getComputedStyle(svg)
+//     expect(order).to.eq('3')
+//     vm.$el.remove()
+//     vm.$destroy()
+// }
 {
     var Constructor = _vue2.default.extend(_button2.default);
-    var _vm = new Constructor({
-        propsData: {
-            iconType: 'setting',
-            loading: true
-        }
-    });
-    _vm.$mount();
-    var useElement = _vm.$el.querySelector('use');
-    var _href = useElement.getAttribute('xlink:href');
-    expect(_href).to.eq('#icon-loading');
-    _vm.$el.remove();
-    _vm.$destroy();
-}
-{
-    var div = document.createElement('div');
-    document.body.appendChild(div);
-    var _VButton = _vue2.default.extend(_button2.default);
-    var _vm2 = new _VButton({
-        propsData: {
-            iconType: 'setting',
-            iconPosition: 'right'
-        }
-    });
-    _vm2.$mount(div);
-    var svg = _vm2.$el.querySelector('svg');
-
-    var _window$getComputedSt = window.getComputedStyle(svg),
-        order = _window$getComputedSt.order;
-
-    expect(order).to.eq('3');
-    _vm2.$el.remove();
-    _vm2.$destroy();
-}
-{
-    var _Constructor = _vue2.default.extend(_button2.default);
-    var _vm3 = new _Constructor({
+    var vm = new Constructor({
         propsData: {
             icon: 'settings'
         }
     });
-    var app = _vm3.$mount();
+    var app = vm.$mount();
     var spy = _chai2.default.spy(function () {});
-    _vm3.$on('click', spy);
+    vm.$on('click', function () {
+        console.log(2222);
+    });
     var button = app.$el;
     console.log(button);
     button.click();
     expect(spy).to.have.been.called();
 }
-},{"vue":10,"./button.vue":6,"./icon.vue":8,"chai":14,"chai-spies":12}],81:[function(require,module,exports) {
+},{"vue":10,"./button.vue":6,"./icon.vue":8,"chai":14,"chai-spies":12}],76:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -21573,7 +21572,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55918' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61139' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -21714,5 +21713,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[81,4], null)
+},{}]},{},[76,4], null)
 //# sourceMappingURL=/app.4d46c0f9.map
