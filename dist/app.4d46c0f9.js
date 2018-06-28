@@ -10341,7 +10341,9 @@ exports.default = {
 
     computed: {},
 
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        this.$nextTick();
+    },
 
 
     methods: {
@@ -10366,7 +10368,7 @@ exports.default = {
   return _c("div", [
     _c(
       "button",
-      { staticClass: "g-button", on: { click: _vm.click } },
+      { ref: "button", staticClass: "g-button", on: { click: _vm.click } },
       [
         _vm.iconType && !_vm.loading
           ? _c("g-icon", {
@@ -21540,10 +21542,10 @@ var expect = _chai2.default.expect;
     });
     var button = app.$el;
     console.log(button);
-    button.click();
-    expect(spy).to.have.been.called();
+    // button.click()
+    // expect(spy).to.have.been.called()
 }
-},{"vue":10,"./button.vue":6,"./icon.vue":8,"chai":14,"chai-spies":12}],76:[function(require,module,exports) {
+},{"vue":10,"./button.vue":6,"./icon.vue":8,"chai":14,"chai-spies":12}],78:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -21713,5 +21715,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[76,4], null)
+},{}]},{},[78,4], null)
 //# sourceMappingURL=/app.4d46c0f9.map

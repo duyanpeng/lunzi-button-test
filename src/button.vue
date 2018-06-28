@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div >
-      <button class="g-button" @click="click">
+      <button class="g-button" ref="button" @click="click">
           <g-icon :class="`g-button-icon-${iconPosition}`" v-if="iconType && !loading" :type="iconType"></g-icon>
           <g-icon class="g-button-loading" :class="`g-button-icon-${iconPosition}`" v-if="loading" type="loading" ></g-icon>
           <div class="g-button-content">
@@ -30,7 +30,9 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+      this.$nextTick()
+  },
 
   methods: {
       click(){
